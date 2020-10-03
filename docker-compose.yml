@@ -2,7 +2,9 @@ version: '2'
 
 services:
   ctfd:
-    build: .
+    build:
+        context: .
+        network: host
     user: root
     restart: always
     ports:
