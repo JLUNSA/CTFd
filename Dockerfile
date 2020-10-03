@@ -17,7 +17,9 @@ RUN apt-get update \
 
 COPY . /opt/CTFd
 
-RUN pip install -r requirements.txt --no-cache-dir
+RUN pip install pip -U \
+    && pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \ 
+    && pip install -r requirements.txt --no-cache-dir
 # hadolint ignore=SC2086
 RUN for d in CTFd/plugins/*; do \
         if [ -f "$d/requirements.txt" ]; then \
