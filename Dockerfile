@@ -3,6 +3,7 @@ WORKDIR /opt/CTFd
 RUN mkdir -p /opt/CTFd /var/log/CTFd /var/uploads
 
 # hadolint ignore=DL3008
+ADD sources.list /etc/apt/
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         build-essential \
