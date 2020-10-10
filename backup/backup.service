@@ -5,9 +5,8 @@ After=network.target
 [Service]
 Type=oneshot
 User=root
-Environment=deploy_path=/srv/CTFd
-EnvironmentFile=$deploy_path/backup/backup.conf
-ExecStart=/usr/bin/sh $deploy_path/backup.sh
+EnvironmentFile=/srv/CTFd/backup/backup.conf
+ExecStart=/usr/bin/sh "$deploy_path/backup/backup.sh"
 
 [Install]
 WantedBy=multi-user.target 

@@ -8,5 +8,5 @@ srv="http://***/dav/"
 user="***"
 pass="***"
 deploy_path="/srv/CTFd"
-backup_path="$deploy_path/.data"
+backup_path="/srv/CTFd/.data"
 keeps=5

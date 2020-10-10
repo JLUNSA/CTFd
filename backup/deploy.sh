@@ -14,7 +14,7 @@ fi
 
 # Place at /usr/lib/systemd/system/
 echo "存放配置文件"
-exer="Environment=deploy_path=$deploy_path"
+exer="EnvironmentFile=$deploy_path/backup/backup.conf"
 sed "8c $exer" backup.service > /etc/systemd/system/backup.service
 cat backup.timer > /etc/systemd/system/backup.timer
 
