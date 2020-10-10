@@ -1,4 +1,6 @@
 backup/backup.conf
+CTFd/plugins/dynamic_reverse/
+data*.tar.gz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
