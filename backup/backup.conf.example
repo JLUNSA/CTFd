@@ -1,0 +1,12 @@
+####################
+# WebDav 备份脚本配置
+####################
+
+tmpfs="/tmp"
+prefix="ctfdbk"
+srv="http://***/dav/"
+user="***"
+pass="***"
+deploy_path="/srv/CTFd"
+backup_path="$deploy_path/.data"
+keeps=5

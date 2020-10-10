@@ -1,0 +1,9 @@
+[Unit]
+Description=backup ctfd data to webdav timer
+ 
+[Timer]
+OnActiveSec=1s
+OnUnitActiveSec=5m
+ 
+[Install]
+WantedBy=timers.target
