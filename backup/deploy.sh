@@ -14,10 +14,12 @@ fi
 
 # Place at /usr/lib/systemd/system/
 echo "存放配置文件"
-exer="EnvironmentFile=$deploy_path/backup/backup.conf"
-sed "8c $exer" backup.service > /etc/systemd/system/backup.service
+envf="EnvironmentFile=$deploy_path/backup/backup.conf"
+exer="ExecStart=/usr/bin/sh \"$deploy_path/backup/backup.sh\""
+cat backup.service | sed "8c $envf" | sed "9c $exer" > /etc/systemd/system/backup.service
 cat backup.timer > /etc/systemd/system/backup.timer
 
 # Run timer
 echo "开始定时任务..."
+systemctl daemon-reload
 systemctl start backup.timer

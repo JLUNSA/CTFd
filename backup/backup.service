@@ -6,7 +6,7 @@ After=network.target
 Type=oneshot
 User=root
 EnvironmentFile=/srv/CTFd/backup/backup.conf
-ExecStart=/usr/bin/sh "$deploy_path/backup/backup.sh"
+ExecStart=/usr/bin/sh "/srv/CTFd/backup/backup.sh"
 
 [Install]
 WantedBy=multi-user.target 

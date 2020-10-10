@@ -32,8 +32,7 @@ else
 fi
 
 # Upload
-curl --user "$user:$pass" -T "$filename" "$srv" -o /dev/stdout # 1> /dev/null
-echo ""
+curl -ss --user "$user:$pass" -T "$filename" "$srv"
 
 if [ $? -eq 0 ]; then
      echo "上传完成...$filename"
