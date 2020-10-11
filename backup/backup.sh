@@ -21,7 +21,9 @@ fi
 echo "开始打包..."
 filename="$prefix"_"$(date +%y%m%d_%H%M%S).tar.gz"
 cd "$tmpfs"
-tar -czvf "$filename" "$backup_path" 1> /dev/null
+cp -r "$backup_path" "$tmpfs/$prefix"
+tar -czvf "$filename" "$prefix" 1> /dev/null
+rm -rf "$tmpfs/$prefix"
 
 if [ $? -eq 0 ]; then
      echo "打包完成...$filename，开始上传..."
